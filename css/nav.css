@@ -1,0 +1,19 @@
+/* navbar */
+.navbar-default 
+{
+    background-color: #654508;
+    color: #cae10d;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    color: #cae10d;
+}
+
+.logo
+{
+	width: 60px;
+	heigh: 60px;
+	margin-top:0;
+	
+}
