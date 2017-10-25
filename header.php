@@ -20,25 +20,14 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
+	
 
 	<?php
 
@@ -69,11 +58,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">   
-            <li><a href="who-we-are.php">Who We Are</a></li>            
-            <li><a href="research.php">Research</a></li>
-            <li><a href="institutes.php">Institutes</a></li>
-            <li><a href="#contact">International Engagement</a></li>
-            <li><a href="#contact">Donate</a></li>
+            <?php
+              wp_nav_menu( array(
+                
+                'theme_location'    => 'primary',
+                'menu' =>  'nav'
+                
+              ));
+            ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <i class="fa fa-sign-in"></i> Login |

@@ -2,6 +2,17 @@
   //Template Name: Who We Are Page
   get_header();
 ?> 
+
+
+
+
+
+<?php echo the_field('test'); ?>
+
+<?php $image=get_field('image'); ?>
+
+<img src="<?php echo $image['url']; ?>"  >
+
     <!-- start chairman -->
     <div class="chairman">
       <h1>Chairman</h1>   
