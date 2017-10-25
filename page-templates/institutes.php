@@ -3,7 +3,6 @@
   //Template Name: Institutes Page
   get_header();
 ?>
-
  <!-- Page Content -->
     <div class="container">
 

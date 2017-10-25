@@ -434,7 +434,7 @@ function twentyseventeen_scripts() {
     wp_enqueue_style('header', get_template_directory_uri() . '/css/nav.css');
     wp_enqueue_style('nav', get_template_directory_uri() . '/css/index.css');
 	wp_enqueue_style('footer', get_template_directory_uri() . '/css/footer.css');
-
+    wp_enqueue_style('J-Sttyle', get_template_directory_uri() . '/css/J-Style.css');
 	//	Javascript Plugins  
 	wp_enqueue_script( 'bootstrap-JS337', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), true);
 	wp_enqueue_script( 'jQuery-JQ321', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), true);
