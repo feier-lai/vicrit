@@ -12,32 +12,71 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<!-- Page Content -->
+    <div class="container">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+        <div class="row">
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
+            <div class="col-lg-12">
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+                <!-- display all posts from the research category -->
+                <?php query_posts('category_name=research'); ?>
 
-				the_post_navigation( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-				) );
+            	<?php if(have_posts()) : ?>
+					<?php while(have_posts()) : the_post(); ?>
 
-			endwhile; // End of the loop.
-			?>
+                		<h1><?php the_title(); ?></h1>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+                		<hr>
+                
+                		<?php if(has_post_thumbnail())	: ?>
+                			<?php $feature_thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id()); ?>
+                				<img class="img-responsive" src="<?php echo $feature_thumbnail_url; ?>" alt="research-images">               		
+                		<?php endif; ?>
+
+                		<hr>
+
+                		<p class="lead"><?php the_content(); ?></p>
+
+                	<?php endwhile; ?>
+			    <?php endif; ?>
+
+                <?php wp_reset_query(); ?>
+
+                <!-- display all posts from the institutes category -->
+                <?php query_posts('cat=4'); ?>
+
+                <?php if(have_posts()) : ?>
+                    <?php while(have_posts()) : the_post(); ?>
+
+                        <h1><?php the_title(); ?></h1>
+
+                        <hr>
+                
+                        <?php if(has_post_thumbnail())  : ?>
+                            <?php $feature_thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id()); ?>
+                                <img class="img-responsive" src="<?php echo $feature_thumbnail_url; ?>" alt="research-images">                      
+                        <?php endif; ?>
+
+                        <hr>
+
+                        <p class="lead"><?php the_content(); ?></p>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+                <?php wp_reset_query(); ?>
+
+
+      
+             
+
+            </div>
+
+        </div>
+       </div>
+
+        <hr>
+			
 
 <?php get_footer();
