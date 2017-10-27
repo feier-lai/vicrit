@@ -112,14 +112,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <!-- end carousel -->
-
-      <?php else : ?>
-
-       <!-- start container -->
-       <div class="container">
-
-        <h1><?php wp_title(''); ?></h1>           
+      <!-- end carousel -->      
         
       <?php endif; ?>
     
