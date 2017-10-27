@@ -67,6 +67,7 @@
 
   </div>
   <!-- end site id -->
-    
+   <?php wp_footer(); ?>
+
   </body>
 </html>

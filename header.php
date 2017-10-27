@@ -26,6 +26,20 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	
+    <!-- start header nav -->
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">         
+          <a class="blog-nav-item fa fa-sign-in" href="#"> Login</a>
+          <a class="blog-nav-item fa fa-key" href="#"> Register</a>       
+            <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" placeholder="What do you want search...">
+            </form>           
+        </nav>
+      </div>
+    </div>
+    <!-- start header nav -->
+
     <!-- start navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container-fluid">
@@ -35,7 +49,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="<?php echo get_option('index'); ?>">LOGO
+          <a class="navbar-brand" href="<?php echo get_option('page_on_front'); ?>">LOGO
             <!-- <img src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" alt="logo"> -->
           </a>
         </div>
@@ -49,14 +63,7 @@
                 
               ));
             ?>
-          </ul> 
-          <ul class="nav navbar-nav navbar-right">
-            <i class="fa fa-sign-in"></i> Login |
-            <i class="fa fa-key"></i> Register
-            <form class="navbar-form navbar-right">
-              <input type="text" class="form-control" placeholder="Search...">
-            </form>           
-          </ul>       
+          </ul>     
         </div>
       </div>
     </nav>
