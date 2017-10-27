@@ -40,3 +40,9 @@
 {
   color: #fff !important;
 }
+
+#menu-nav li{
+    display: block;
+    float: left;
+    margin: 1em;
+}
