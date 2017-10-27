@@ -13,6 +13,9 @@
  */
 
 ?>
+    </div>
+    <!-- end container -->
+
 
 		 <!-- start footer -->
     <footer class="footer-distributed">
@@ -62,9 +65,8 @@
     </footer>
     <!-- end footer -->
 
-
-
-</div>
+  </div>
+  <!-- end site id -->
     
   </body>
 </html>

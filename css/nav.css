@@ -1,19 +1,42 @@
-/* navbar */
-.navbar-default 
+.navbar 
 {
-    background-color: #654508;
-    color: #cae10d;
+	font-family: Roboto, sans-serif;
+    margin-bottom: 0;
+    background-color: #214370;
+    border: 0;
+    font-size: 16px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
 }
 
-.navbar-default .navbar-nav > li > a
+.navbar li a, .navbar .navbar-brand 
+{ 
+    color: #fff !important;
+}
+  
+.navbar-nav li a:hover 
 {
-    color: #cae10d;
+    color: #b0c8e8 !important;
 }
 
-.logo
+.navbar-nav li.active a 
 {
-	width: 60px;
-	heigh: 60px;
-	margin-top:0;
-	
+    color: #fff !important;
+    background-color: #b0c8e8 !important;
+}
+  
+.navbar-default .navbar-toggle 
+{
+    border-color: transparent;
+}
+
+.logo 
+{
+    color: #f4511e;
+    font-size: 200px;
+}
+
+.navbar-right
+{
+  color: #fff !important;
 }

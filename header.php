@@ -26,23 +26,21 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	
-
-	<!-- start navbar -->
+    <!-- start navbar -->
     <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="./index.php">
-            <img class="logo" src="./img/logo.jpg" alt="">
+          <a class="navbar-brand" href="<?php echo get_option('index'); ?>">LOGO
+            <!-- <img src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" alt="logo"> -->
           </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-             
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
             <?php
               wp_nav_menu( array(
                 
@@ -51,20 +49,79 @@
                 
               ));
             ?>
-        
+          </ul> 
           <ul class="nav navbar-nav navbar-right">
             <i class="fa fa-sign-in"></i> Login |
             <i class="fa fa-key"></i> Register
             <form class="navbar-form navbar-right">
               <input type="text" class="form-control" placeholder="Search...">
-            </form>
-
-            
-          </ul>
+            </form>           
+          </ul>       
         </div>
       </div>
     </nav>
-    <!--  end navbar -->
+    <!-- end navbar -->
+
+	
+
+     <?php if(is_front_page()) : ?>
+      
+      <!-- start carousel -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="<?php bloginfo('template_url'); ?>/img/research1.jpg" alt="business1" width="1200" height="700">
+            <div class="carousel-caption">
+              <h3>Open Now</h3>
+              <p>Welcome to grand opening!</p>
+            </div>      
+          </div>
+
+          <div class="item">
+            <img src="<?php bloginfo('template_url'); ?>/img/research2.jpg" alt="business2" width="1200" height="700">
+            <div class="carousel-caption">
+              <h3>Team</h3>
+              <p>Meet our team to solve problem!</p>
+            </div>      
+          </div>
+    
+          <div class="item">
+            <img src="<?php bloginfo('template_url'); ?>/img/research3.jpg" alt="business3" width="1200" height="700">
+            <div class="carousel-caption">
+              <h3>Big place </h3>
+              <p>One of biggest office!</p>
+            </div>      
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!-- end carousel -->
+
+      <?php else : ?>
+
+       <!-- start container -->
+       <div class="container">
+
+        <h1><?php wp_title(''); ?></h1>           
+        
+      <?php endif; ?>
     
     <br>
     <br>
